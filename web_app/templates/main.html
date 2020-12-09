@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main_style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='css/img/favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,700;0,900;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="content">
+            <a href="{{ url_for('zadat_pobyt') }}">
+                <div class="card"> Zadat pobyt</div>
+            </a>
+            <a href="{{ url_for('zadat_uklid') }}">
+                <div class="card"> Zadat úklid</div>
+            </a>
+            <a href="{{ url_for('zadat_zavadu') }}">
+                <div class="card"> Zadat závadu</div>
+            </a>
+            <a href="{{ url_for('pobyty') }}">
+                <div class="card"> Seznam pobytů/ Upravit pobyt</div>
+            </a>
+            <a href="{{ url_for('uklidy') }}">
+                <div class="card"> Seznam úklidů/ Upravit úklid</div>
+            </a>
+            <a href="{{ url_for('uklizeci') }}">
+                <div class="card">Správa úklidové čety</div>
+            </a>
+        </ul>
+    </div>
+</body>
+
+
+</html>
