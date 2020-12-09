@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ebebeb;
+}
+
+#active {
+    float: left;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(218, 68, 68);
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.topnav a {
+    position: relative;
+}
+
+.topnav a:after {
+    position: absolute;
+    bottom: 18px;
+    left: 5%;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '';
+    color: transparent;
+    background: rgb(255, 255, 255);
+    height: 1px;
+    box-shadow: 2px 2px 1px rgba(58, 43, 43, 0.4);
+    z-index: 2;
+}
+
+.topnav a:hover:after {
+    width: 90%;
+    transition: 0.8s;
+}
+
+.topnav a#active:hover:after {
+    width: 0%;
+}
+
+.topnav a:hover {
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 0 3px #ffffff, 0 0 2px #ffffff;
+    transition: 0.8s;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 24px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.topnav a:hover {
+    color: #ffffff;
+}
+
+.topnav a#active {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+}
+
+.topnav a#active:hover {
+    background-color: #ffffff;
+    color: rgb(218, 68, 68);
+    text-shadow: 0 0 0px #ffffff, 0 0 0px #ffffff;
+    transition: 0.5s;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (min-width: 940px) {
+    #active {
+        float: left !important;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+.content {
+    background-color: #ffffff;
+    width: 70%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 4px 4px 3px rgb(160, 160, 160);
+}
+
+.form-content {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.grid {
+    padding: 1rem;
+    height: 4rem;
+}
+
+@media (min-width: 800px) {
+    .form-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 20px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 20px;
+}
+
+.form-content h2 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.form-content input[type=text] {
+    width: 95%;
+    height: 60px;
+    font-size: 30px;
+}
+
+.form-content input[type=number] {
+    width: 95%;
+    height: 60px;
+    font-size: 30px;
+}
+
+.form-content input[type=date] {
+    width: 95%;
+    height: 60px;
+    font-size: 30px;
+}
+
+.form-content select {
+    width: 95%;
+    height: 60px;
+    font-size: 30px;
+}
+
+.form-content input[type=submit] {
+    font-size: 25px;
+    width: 95%;
+    height: 50px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(218, 68, 68);
+    box-shadow: 4px 4px 3px rgb(160, 160, 160);
+    border: 2px solid rgb(218, 68, 68);
+}
+
+.form-content input[type=submit]:hover {
+    color: rgb(218, 68, 68);
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s;
+}
+
+.content table {
+    width: 100%;
+    /*border: 1px solid rgb(0, 0, 0);*/
+    border-radius: 5px 5px 5px 5px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 8px 8px 7px rgb(160, 160, 160);
+}
+
+.content table th {
+    height: 40px;
+}
+
+.content table td {
+    height: 40px;
+    text-align: center;
+}
+
+.content table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.content table tr:nth-child(1) {
+    background-color: #104a8b;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+}
+
+.content table tr:nth-child(even) {
+    background-color: #dfdfdf;
+}

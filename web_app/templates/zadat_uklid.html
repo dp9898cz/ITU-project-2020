@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+<div class="content">
+    <h1>Zadat úklid</h1>
+    <div class="form-content">
+
+
+
+        <div class="grid">
+            <h2>Jméno</h2>
+        </div>
+        <div class="grid"><input type="text"></div>
+        <div class="grid">
+            <h2>Příjmení</h2>
+        </div>
+        <div class="grid"><input type="text"></div>
+        <div class="grid">
+            <h2>Pokoj</h2>
+        </div>
+        <div class="grid"><input type="number"></div>
+        <div class="grid">
+            <h2>Datum</h2>
+        </div>
+        <div class="grid"> <input type="date"></div>
+        <div class="grid">
+            <h2>Typ</h2>
+        </div>
+        <div class="grid"><select name="type">
+            <option value="1" selected>Standartní</option>
+            <option value="2">Přeúklid</option>
+            <option value="3">Kompletní</option>
+        </select></div>
+        <div class="grid"><input type="submit" value="Seznam všech úklidů"></div>
+        <div class="grid"><input type="submit" value="Zadat"></div>
+    </div>
+</div>
+{% endblock %}
