@@ -1,35 +1,35 @@
 from flask import render_template, Blueprint
 
-main = Blueprint('main', __name__)
+routes = Blueprint('routes', __name__)
 
-@main.route('/')
+@routes.route('/')
 def login():
     return render_template('login.html')
 
-@main.route('/main', methods=['GET'])
-def main():
+@routes.route('/main', methods=['GET'])
+def routes():
     return render_template('main.html')
 
-@main.route('/zadat_pobyt', methods=['GET'])
+@routes.route('/zadat_pobyt', methods=['GET'])
 def zadat_pobyt():
     return render_template('zadat_pobyt.html')
 
-@main.route('/zadat_uklid', methods=['GET'])
+@routes.route('/zadat_uklid', methods=['GET'])
 def zadat_uklid():
     return render_template('zadat_uklid.html')
 
-@main.route('/zadat_zavadu', methods=['GET'])
+@routes.route('/zadat_zavadu', methods=['GET'])
 def zadat_zavadu():
     return render_template('zadat_zavadu.html')
 
-@main.route('/pobyty', methods=['GET'])
+@routes.route('/pobyty', methods=['GET'])
 def pobyty():
     return render_template('pobyty.html')
 
-@main.route('/uklidy', methods=['GET'])
+@routes.route('/uklidy', methods=['GET'])
 def uklidy():
     return render_template('uklidy.html')
 
-@main.route('/uklizeci', methods=['GET'])
+@routes.route('/uklizeci', methods=['GET'])
 def uklizeci():
     return render_template('uklizeci.html')
