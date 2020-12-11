@@ -22,44 +22,44 @@
     <input type="checkbox" id="toggle" />
     <div class="menu">
         <nav class="main-menu">
-            <a href="{{ url_for('main') }}" class="main-icon">Rentel</a>
+            <a href="{{ url_for('routes.main') }}" class="main-icon">Rentel</a>
             <ul>
                 <li>
-                    <a class="level" href="{{ url_for('pobyty') }}">Pobyty</a>
+                    <a class="level" href="{{ url_for('routes.pobyty') }}">Pobyty</a>
                     <ul>
-                        <li><a href="{{ url_for('zadat_pobyt') }}">Zadat pobyt</a></li>
-                        <li><a href="{{ url_for('pobyty') }}">Seznam pobytů</a></li>
+                        <li><a href="{{ url_for('routes.zadat_pobyt') }}">Zadat pobyt</a></li>
+                        <li><a href="{{ url_for('routes.pobyty') }}">Seznam pobytů</a></li>
 
                     </ul>
                 </li>
                 <li>
-                    <a class="level" href="{{ url_for('uklidy') }}">Úklidy</a>
+                    <a class="level" href="{{ url_for('routes.uklidy') }}">Úklidy</a>
                     <ul>
-                        <li><a href="{{ url_for('zadat_uklid') }}">Zadat úklid</a></li>
-                        <li><a href="{{ url_for('uklidy') }}">Seznam úklidů</a></li>
+                        <li><a href="{{ url_for('routes.zadat_uklid') }}">Zadat úklid</a></li>
+                        <li><a href="{{ url_for('routes.uklidy') }}">Seznam úklidů</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a class="level" href="{{ url_for('zadat_zavadu') }}">Závady</a>
+                    <a class="level" href="{{ url_for('routes.zadat_zavadu') }}">Závady</a>
                     <ul>
-                        <li><a href="{{ url_for('zadat_zavadu') }}">Zadat závadu</a></li>
-                        <li><a href="{{ url_for('zavady') }}">Seznam závad</a></li>
+                        <li><a href="{{ url_for('routes.zadat_zavadu') }}">Zadat závadu</a></li>
+                        <li><a href="{{ url_for('routes.zavady') }}">Seznam závad</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a class="level" href="{{ url_for('nalezy') }}">Nálezy</a>
+                    <a class="level" href="{{ url_for('routes.nalezy') }}">Nálezy</a>
                     <ul>
-                        <li><a href="{{ url_for('zadat_nalez') }}">Přidat nález</a></li>
-                        <li><a href="{{ url_for('nalezy') }}">Seznam nálezů</a></li>
+                        <li><a href="{{ url_for('routes.zadat_nalez') }}">Přidat nález</a></li>
+                        <li><a href="{{ url_for('routes.nalezy') }}">Seznam nálezů</a></li>
 
 
                     </ul>
                 </li>
                 <li>
-                    <a class="level" href="{{ url_for('uklizeci') }}">Uklízecí četa</a>
+                    <a class="level" href="{{ url_for('routes.uklizeci') }}">Uklízecí četa</a>
                     <ul>
-                        <li><a href="{{ url_for('uklizeci') }}">Přidat uklízeče</a></li>
-                        <li><a href="{{ url_for('uklizeci') }}">Uklízecí četa</a></li>
+                        <li><a href="{{ url_for('routes.uklizeci') }}">Přidat uklízeče</a></li>
+                        <li><a href="{{ url_for('routes.uklizeci') }}">Uklízecí četa</a></li>
                     </ul>
                 </li>
                 <li><a href="" class="level">Odhlásit</a></li>
