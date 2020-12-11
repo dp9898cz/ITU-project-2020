@@ -11,4 +11,3 @@ def create_app():
     db.init_app(app)
     register_commands(app)
     return app
-
