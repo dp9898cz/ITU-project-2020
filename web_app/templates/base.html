@@ -16,13 +16,13 @@
 
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="{{ url_for('main') }}" id="active">Rentel</a>
-        <a href="{{ url_for('uklizeci') }}">Uklízeči</a>
-        <a href="{{ url_for('pobyty') }}">Pobyty</a>
-        <a href="{{ url_for('uklidy') }}">Úklidy</a>
-        <a href="{{ url_for('zadat_zavadu') }}">Zadat závadu</a>
-        <a href="{{ url_for('zadat_pobyt') }}">Zadat pobyt</a>
-        <a href="{{ url_for('zadat_uklid') }}">Zadat úklid</a>
+        <a href="{{ url_for('routes.main') }}" id="active">Rentel</a>
+        <a href="{{ url_for('routes.uklizeci') }}">Uklízeči</a>
+        <a href="{{ url_for('routes.pobyty') }}">Pobyty</a>
+        <a href="{{ url_for('routes.uklidy') }}">Úklidy</a>
+        <a href="{{ url_for('routes.zadat_zavadu') }}">Zadat závadu</a>
+        <a href="{{ url_for('routes.zadat_pobyt') }}">Zadat pobyt</a>
+        <a href="{{ url_for('routes.zadat_uklid') }}">Zadat úklid</a>
 
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
