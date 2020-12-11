@@ -21,9 +21,21 @@ def zadat_uklid():
 def zadat_zavadu():
     return render_template('zadat_zavadu.html')
 
+@app.route('/zavady', methods=['GET'])
+def zavady():
+    return render_template('zavady.html')
+
 @app.route('/pobyty', methods=['GET'])
 def pobyty():
     return render_template('pobyty.html')
+
+@app.route('/nalezy', methods=['GET'])
+def nalezy():
+    return render_template('nalezy.html')
+
+@app.route('/zadat_nalez', methods=['GET'])
+def zadat_nalez():
+    return render_template('zadat_nalez.html')
 
 @app.route('/uklidy', methods=['GET'])
 def uklidy():
