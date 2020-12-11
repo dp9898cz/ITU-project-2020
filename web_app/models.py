@@ -24,8 +24,8 @@ class Cleanup(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     room_id = db.Column(db.Integer, db.ForeignKey('room.id'))
     c_type = db.Column(db.Enum(CleanupType), nullable=False)
-    completed = db.Column(db.models.DateTime)
-    to_be_completed = db.Column(db.models.DateTime, nullable=False)
+    completed = db.Column(db.DateTime)
+    to_be_completed = db.Column(db.DateTime, nullable=False)
 
 class Fault(db.Model):
     id = db.Column(db.Integer, primary_key = True)
