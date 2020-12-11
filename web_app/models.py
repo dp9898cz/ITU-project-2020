@@ -1,4 +1,4 @@
-from appdata.extensions import db
+from web_app.extensions import db
 import enum
 
 class RoomType(enum.Enum):
