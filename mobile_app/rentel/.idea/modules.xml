@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rentel.iml" filepath="$PROJECT_DIR$/rentel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/rentel_android.iml" filepath="$PROJECT_DIR$/android/rentel_android.iml" />
+    </modules>
+  </component>
+</project>
