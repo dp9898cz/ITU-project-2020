@@ -16,9 +16,9 @@ class Room(db.Model):
     number = db.Column(db.Integer, nullable=False, unique=True)
     r_type = db.Column(db.Enum(RoomType), nullable=False)
 
-    cleanups = db.relationship('Cleanup', uselist=False, backref='room', cascade="all, delete-orphan")
-    faults = db.relationship('Fault', uselist=False, backref='room', cascade="all, delete-orphan")
-    discoveries = db.relationship('Discovery', uselist=False, backref='room', cascade="all, delete-orphan")
+    cleanups = db.relationship('Cleanup', backref='room', cascade="all, delete-orphan")
+    faults = db.relationship('Fault', backref='room', cascade="all, delete-orphan")
+    discoveries = db.relationship('Discovery', backref='room', cascade="all, delete-orphan")
 
 class Cleanup(db.Model):
     id = db.Column(db.Integer, primary_key = True)
