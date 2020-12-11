@@ -7,7 +7,7 @@ def login():
     return render_template('login.html')
 
 @routes.route('/main', methods=['GET'])
-def routes():
+def main():
     return render_template('main.html')
 
 @routes.route('/zadat_pobyt', methods=['GET'])
