@@ -293,8 +293,16 @@ body {
     box-shadow: 4px 4px 3px rgb(160, 160, 160);
 }
 
+.content_for_forms {
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 3px rgb(160, 160, 160);
+}
+
 .form-content {
-    font-size: 50px;
+    font-size: 60px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     margin: 0 auto;
@@ -320,23 +328,27 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 100px;
+    margin: 10px;
+    font-size: 90px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    text-decoration: underline 2px;
+    text-underline-offset: 30px;
 }
 
 h3 {
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
 .form-content h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-align: center;
+    padding: 20px;
 }
 
 .form-content input[type=text] {
@@ -378,6 +390,26 @@ h3 {
     color: rgb(218, 68, 68);
     background-color: rgb(255, 255, 255);
     transition: 0.4s;
+}
+
+.form-content input[type=text]:hover {
+    box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
+    transition: 0.2s;
+}
+
+.form-content input[type=date]:hover {
+    box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
+    transition: 0.2s;
+}
+
+.form-content input[type=number]:hover {
+    box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
+    transition: 0.2s;
+}
+
+.form-content select:hover {
+    box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
+    transition: 0.2s;
 }
 
 .content table {
