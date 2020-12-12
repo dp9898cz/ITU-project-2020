@@ -25,14 +25,6 @@
             <a href="{{ url_for('routes.main') }}" class="main-icon">Rentel</a>
             <ul>
                 <li>
-                    <a class="level" href="{{ url_for('routes.pobyty') }}">Pobyty</a>
-                    <ul>
-                        <li><a href="{{ url_for('routes.zadat_pobyt') }}">Zadat pobyt</a></li>
-                        <li><a href="{{ url_for('routes.pobyty') }}">Seznam pobytů</a></li>
-
-                    </ul>
-                </li>
-                <li>
                     <a class="level" href="{{ url_for('routes.uklidy') }}">Úklidy</a>
                     <ul>
                         <li><a href="{{ url_for('routes.zadat_uklid') }}">Zadat úklid</a></li>
@@ -58,7 +50,7 @@
                 <li>
                     <a class="level" href="{{ url_for('routes.uklizeci') }}">Uklízecí četa</a>
                     <ul>
-                        <li><a href="{{ url_for('routes.uklizeci') }}">Přidat uklízeče</a></li>
+                        <li><a href="{{ url_for('routes.zadat_uklizeci') }}">Přidat uklízeče</a></li>
                         <li><a href="{{ url_for('routes.uklizeci') }}">Uklízecí četa</a></li>
                     </ul>
                 </li>

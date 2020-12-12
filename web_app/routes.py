@@ -26,6 +26,10 @@ def pobyty():
     return render_template('pobyty.html')
 
 @routes.route('/uklizeci', methods=['GET'])
+def zadat_uklizeci():
+    return render_template('zadat_uklizeci.html')
+
+@routes.route('/uklizeci', methods=['GET'])
 def uklizeci():
     return render_template('uklizeci.html')
 
