@@ -22,7 +22,7 @@ def login():
     else:
         return render_template('login.html')
 
-@main.route('/logout', methods=['POST'])
+@routes.route('/logout', methods=['POST'])
 @login_required
 def logout():
     logout_user()
