@@ -51,7 +51,10 @@ def zadat_uklizeci():
 
 @routes.route('/uklizeci', methods=['GET'])
 def uklizeci():
-    return render_template('uklizeci.html')
+    context = {
+        "users" : User.query.all()
+    }
+    return render_template('uklizeci.html', **context)
 
 @routes.route('/zadat_uklid', methods=['GET'])
 def zadat_uklid():

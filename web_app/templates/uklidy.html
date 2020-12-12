@@ -4,46 +4,21 @@
     <h3>Seznam úklidů</h3>
     <table>
         <tr id="header">
-            <th>Pobyt (od-do)</th>
             <th>Pokoj</th>
             <th>Datum</th>
             <th>Čas</th>
             <th>Typ</th>
             <th>Splněno</th>
         </tr>
-        <tr>
-            <td>checkin/checkout</td>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>19:50:45</td>
-            <td>standartní</td>
-            <td><input type="checkbox"></td>
-        </tr>
-        <tr>
-            <td>checkin/checkout</td>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>19:50:45</td>
-            <td>standartní</td>
-            <td><input type="checkbox"></td>
-        </tr>
-        <tr>
-            <td>checkin/checkout</td>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>19:50:45</td>
-            <td>standartní</td>
-            <td><input type="checkbox"></td>
-        </tr>
-        <tr>
-            <td>checkin/checkout</td>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>19:50:45</td>
-            <td>standartní</td>
-            <td><input type="checkbox"></td>
-        </tr>
-
+        {% for u in uklidy %}
+            <tr>
+                <td>{{ u.room.number }}</td>
+                <td>{{ u.to_be_completed }} </td>
+                <td>{{ u.to_be_completed }} </td>
+                <td>{{ u.c_type }}</td>
+                <td><input type="checkbox" {% if u.completed %}checked{% endif %}></td>
+            </tr>
+        {% endfor %}
     </table>
 </div>
 {% endblock %}

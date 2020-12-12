@@ -3,30 +3,19 @@
     <h3>Seznam pracovníku</h3>
     <table>
         <tr>
-            <th>Id</th>
+            <th>Login</th>
             <th>Jméno</th>
             <th>Příjmení</th>
+            <th>Admin</th>
         </tr>
-        <tr>
-            <td>5</td>
-            <td>Žaneta</td>
-            <td>Úklidová</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Tereza</td>
-            <td>Bambino</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Jarmila</td>
-            <td>Křehká</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Igor</td>
-            <td>Vyhodil</td>
-        </tr>
+        {% for u in users %}
+            <tr>
+                <td>{{ u.login }}</td>
+                <td>{{ n.name }}</td>
+                <td>{{ n.surname }}</td>
+                <td><input type="checkbox" {% if u.isAdmin %}checked{% endif %}></td>
+            </tr>
+        {% endfor %}
     </table>
 </div>
 {% endblock %}

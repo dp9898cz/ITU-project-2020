@@ -10,30 +10,10 @@
         {% for zavada in zavady %}
             <tr>
                 <td>{{ zavada.room.number }}</td>
-                <td>not implemented</td>
+                <td>{{ zavada.date }}</td>
                 <td>{{ zavada.description }}</td>
             </tr>
         {% endfor %}
-        <tr>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>rozbitý ovladač</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>prasklé žárovky</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>nefunguje topení</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>25.1.2021</td>
-            <td>nefunguje klimatizace</td>
-        </tr>
     </table>
 </div>
 {% endblock %}
