@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, redirect, url_for, request
+from flask import render_template, Blueprint, redirect, url_for, request, flash
 
 from web_app.models import *
 from werkzeug.security import check_password_hash
@@ -18,6 +18,7 @@ def login():
                     #login
                     login_user(user)
                     return redirect(url_for('routes.main'))
+        flash('Špatně zadané údaje')
         return render_template('login.html')        
     else:
         return render_template('login.html')

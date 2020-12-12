@@ -11,8 +11,8 @@
         {% for u in users %}
             <tr>
                 <td>{{ u.login }}</td>
-                <td>{{ n.name }}</td>
-                <td>{{ n.surname }}</td>
+                <td>{{ u.name }}</td>
+                <td>{{ u.surname }}</td>
                 <td><input type="checkbox" {% if u.isAdmin %}checked{% endif %}></td>
             </tr>
         {% endfor %}
