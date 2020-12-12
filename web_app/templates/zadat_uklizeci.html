@@ -1,30 +1,32 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
 <div class="content">
     <h1>Přidat uklízeče</h1>
-    <div class="form-content">
-        <div class="grid">
-            <h2>Jméno:</h2>
+    <form>
+        <div class="form-content">
+            <div class="grid">
+                <h2>Jméno:</h2>
+            </div>
+            <div class="grid"><input type="text"></div>
+            <div class="grid">
+                <h2>Příjmení:</h2>
+            </div>
+            <div class="grid"><input type="text"></div>
+            <div class="grid">
+                <h2>Login:</h2>
+            </div>
+            <div class="grid"><input type="text"></div>
+            <div class="grid">
+                <h2>Heslo:</h2>
+            </div>
+            <div class="grid"><input type="text"></div>
+            <div class="grid">
+                <h2>Admin(Ano/Ne)</h2>
+            </div>
+            <div class="grid"><label class="checkmark"><input type="checkbox" ><span class="checkbox-custom rectangular"></span></label></div>
+            <div class="grid"><input type="submit" value="Seznam všech úklidů"></div>
+            <div class="grid"><input type="submit" value="Zadat"></div>
         </div>
-        <div class="grid"><input type="text"></div>
-        <div class="grid">
-            <h2>Příjmení:</h2>
-        </div>
-        <div class="grid"><input type="text"></div>
-        <div class="grid">
-            <h2>Login:</h2>
-        </div>
-        <div class="grid"><input type="text"></div>
-        <div class="grid">
-            <h2>Heslo:</h2>
-        </div>
-        <div class="grid"><input type="text"></div>
-        <div class="grid">
-            <h2>Admin(Ano/Ne)</h2>
-        </div>
-        <div class="grid"><label class="checkmark"><input type="checkbox" ><span class="checkbox-custom rectangular"></span></label></div>
-        <div class="grid"><input type="submit" value="Seznam všech úklidů"></div>
-        <div class="grid"><input type="submit" value="Zadat"></div>
-    </div>
+    </form>
 </div>
 </div>
 {% endblock %}
