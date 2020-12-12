@@ -11,10 +11,10 @@ def login():
     if request.method == 'POST':
         #check if the login is already used
         user = None
-        if request.args.get('login') and request.args.get('password'):
-            if User.query.filter_by(login=request.args.get('login')).first():
-                user = User.query.filter_by(login=request.args.get('login')).first()
-                if check_password_hash(user.password, request.args.get('password')):
+        if request.form.get('login') and request.form.get('password'):
+            if User.query.filter_by(login=request.form.get('login')).first():
+                user = User.query.filter_by(login=request.form.get('login')).first()
+                if check_password_hash(user.password, request.form.get('password')):
                     #login
                     login_user(user)
                     return redirect(url_for('routes.main'))
