@@ -80,7 +80,7 @@ def register_commands(app):
             unhashed_password = "admin",
             isAdmin = True,
         )
-        
+
         janitor = User(
             name = "Uklizecka",
             surname = "Nejaka",
@@ -93,6 +93,8 @@ def register_commands(app):
         db.session.add(room2)
         db.session.add(room3)
         db.session.add(room4)
+        db.session.add(admin)
+        db.session.add(janitor)
 
         db.session.commit()
 
