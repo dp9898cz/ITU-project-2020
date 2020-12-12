@@ -3,6 +3,7 @@ from flask import Flask
 from web_app.extensions import db, login_manager
 from web_app.commands import register_commands
 from web_app.routes import routes
+from web_app.models import User
 
 def create_app():
     app = Flask(__name__)
@@ -17,5 +18,8 @@ def create_app():
     register_commands(app)
 
     login_manager.login_view = 'routes.login'
-    
+    @login_manager.user_loader
+    def loadUser(userID):
+        return User.query.get(userID)
+
     return app
