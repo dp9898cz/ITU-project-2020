@@ -2,7 +2,7 @@ from flask import render_template, Blueprint, redirect, url_for, request
 
 from web_app.models import *
 from werkzeug.security import check_password_hash
-from flask_login import login_user, logout_user, current_user
+from flask_login import login_user, logout_user, current_user, login_required
 
 routes = Blueprint('routes', __name__)
 
