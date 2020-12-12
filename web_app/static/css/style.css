@@ -375,6 +375,26 @@ h3 {
     font-size: 30px;
 }
 
+.form-content a {
+    font-size: 25px;
+    padding: 7px;
+    position: relative;
+    top: -2px;
+    padding-left: 30%;
+    padding-right: 30%;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(218, 68, 68);
+    box-shadow: 4px 4px 3px rgb(160, 160, 160);
+    border: 2px solid rgb(218, 68, 68);
+}
+
+.form-content a:hover {
+    color: rgb(218, 68, 68);
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s;
+}
+
 .form-content input[type=submit] {
     font-size: 25px;
     width: 95%;
