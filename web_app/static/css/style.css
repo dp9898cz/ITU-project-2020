@@ -382,12 +382,11 @@ h3 {
 
 .content table {
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 10%;
     border-collapse: collapse;
     width: 80%;
-    height: 200px;
+    height: 300px;
     box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2), -1px -1px 8px rgb(O, O, O, 0.2);
     background-color: rgb(218, 68, 68);
     color: #ddd;
@@ -396,13 +395,13 @@ h3 {
 
 .content table th{
     padding: 12px;
-    border-bottom: 1px solid #ddd;
     text-align: center;
+    background-color: #000;
 }
 .content table td{
     padding: 12px;
+    border-bottom: 1px solid #ddd;
     text-align: center;
-    background-color: #000;
 }
 .content table tr {
     transition: all .2s ease-in;

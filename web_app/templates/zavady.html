@@ -3,36 +3,36 @@
     <h3>Seznam závad</h3>
     <table>
         <tr>
-            <td>Pokoj</td>
-            <td>Datum</td>
-            <td>Popis</td>
+            <th>Pokoj</th>
+            <th>Datum</th>
+            <th>Popis</th>
         </tr>
         {% for zavada in zavady %}
             <tr>
-                <th>{{ zavada.room.number }}</th>
-                <th>not implemented</th>
-                <th>{{ zavada.description }}</th>
+                <td>{{ zavada.room.number }}</td>
+                <td>not implemented</td>
+                <td>{{ zavada.description }}</td>
             </tr>
         {% endfor %}
         <tr>
-            <th>5</th>
-            <th>25.1.2021</th>
-            <th>rozbitý ovladač</th>
+            <td>5</td>
+            <td>25.1.2021</td>
+            <td>rozbitý ovladač</td>
         </tr>
         <tr>
-            <th>5</th>
-            <th>25.1.2021</th>
-            <th>prasklé žárovky</th>
+            <td>5</td>
+            <td>25.1.2021</td>
+            <td>prasklé žárovky</td>
         </tr>
         <tr>
-            <th>5</th>
-            <th>25.1.2021</th>
-            <th>nefunguje topení</th>
+            <td>5</td>
+            <td>25.1.2021</td>
+            <td>nefunguje topení</td>
         </tr>
         <tr>
-            <th>5</th>
-            <th>25.1.2021</th>
-            <th>nefunguje klimatizace</th>
+            <td>5</td>
+            <td>25.1.2021</td>
+            <td>nefunguje klimatizace</td>
         </tr>
     </table>
 </div>
