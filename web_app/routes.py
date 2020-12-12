@@ -1,5 +1,7 @@
 from flask import render_template, Blueprint
 
+from web_app.models import *
+
 routes = Blueprint('routes', __name__)
 
 @routes.route('/')
@@ -33,11 +35,17 @@ def zadat_uklid():
 
 @routes.route('/zavady', methods=['GET'])
 def zavady():
-    return render_template('zavady.html')
+    context = {
+        "zavady": Fault.query.order_by(Fault.id.desc()).all()
+    }
+    return render_template('zavady.html', **context)
 
 @routes.route('/nalezy', methods=['GET'])
 def nalezy():
-    return render_template('nalezy.html')
+    context = {
+        "nalezy": Discovery.query.order_by(Discovery.id.desc()).all()
+    }
+    return render_template('nalezy.html', **context)
 
 @routes.route('/zadat_nalez', methods=['GET'])
 def zadat_nalez():
@@ -45,5 +53,8 @@ def zadat_nalez():
 
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
-    return render_template('uklidy.html')
+    context = {
+        "uklidy": Cleanup.query.order_by(Cleanup.to_be_completed.desc()).all()
+    }
+    return render_template('uklidy.html', **context)
 

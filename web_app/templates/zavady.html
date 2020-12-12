@@ -7,6 +7,13 @@
             <td>Datum</td>
             <td>Popis</td>
         </tr>
+        {% for zavada in zavady %}
+            <tr>
+                <th>{{ zavada.room.number }}</th>
+                <th>not implemented</th>
+                <th>{{ zavada.description }}</th>
+            </tr>
+        {% endfor %}
         <tr>
             <th>5</th>
             <th>25.1.2021</th>
