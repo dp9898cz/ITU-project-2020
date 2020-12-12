@@ -19,37 +19,43 @@ def register_commands(app):
                     to_be_completed = datetime.datetime.now()
                 ),
                 Cleanup(
-                    c_type = CleanupType.Preduklid,
+                    c_type = CleanupType.Předúklid,
                     to_be_completed = datetime.datetime.now()
                 ),
                 Cleanup(
-                    c_type = CleanupType.Standartni,
+                    c_type = CleanupType.Standartní,
                     to_be_completed = datetime.datetime.now()
                 ),
                 Cleanup(
-                    c_type = CleanupType.Standartni,
+                    c_type = CleanupType.Kompletní,
                     to_be_completed = datetime.datetime.now()
                 )
             ],
             faults = [
                 Fault(
                     description = 'Chybí žárovka v koupelně.',
+                    date = datetime.datetime.now(),
                 ),
                 Fault(
                     description = 'Rozbitá noha od postele.',
+                    date = datetime.datetime.now(),
                 ),
                 Fault(
                     description = 'Nefunguje fén na vlasy.',
+                    date = datetime.datetime.now(),
                 ),
             ],
             discoveries = [
                 Discovery(
+                    date = datetime.datetime.now(),
                     description = "Na zemi ležel bílý ručník.",
                 ),
                 Discovery(
+                    date = datetime.datetime.now(),
                     description = "V nočním stolku nalezen balíček kondomů.",
                 ),
                 Discovery(
+                    date = datetime.datetime.now(),
                     description = "Ve skrini nalezena penezenka.",
                 ),
             ],
@@ -65,6 +71,22 @@ def register_commands(app):
         room4 = Room(
             number = 44,
             r_type = RoomType.Economy,
+        )
+
+        admin = User(
+            name = "Admin",
+            surname = "Admin",
+            login = "admin",
+            unhashed_password = "admin",
+            isAdmin = True,
+        )
+        
+        janitor = User(
+            name = "Uklizecka",
+            surname = "Nejaka",
+            login = "janitor",
+            unhashed_password = "janitor",
+            isAdmin = False,
         )
 
         db.session.add(room1)

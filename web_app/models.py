@@ -1,4 +1,6 @@
 from web_app.extensions import db
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash
 import enum
 
 class RoomType(enum.Enum):
@@ -7,9 +9,10 @@ class RoomType(enum.Enum):
     Premium = 2
 
 class CleanupType(enum.Enum):
-    Standartni = 0
-    Preduklid = 1
+    Standartní = 0
+    Předúklid = 1
     Minibar = 2
+    Kompletní = 3
 
 class Room(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -31,8 +34,26 @@ class Fault(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     room_id = db.Column(db.Integer, db.ForeignKey('room.id'))
     description = db.Column(db.String, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
 
 class Discovery(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     room_id = db.Column(db.Integer, db.ForeignKey('room.id'))
     description = db.Column(db.String, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key = True)
+    login = db.Column(db.String(32), nullable=False, unique=True)
+    password = db.Column(db.String(100), nullable = False)
+    isAdmin = db.Column(db.Boolean, nullable=False, default=False)
+    name = db.Column(db.String(50), nullable = True)
+    surname = db.Column(db.String(50), nullable = True)
+
+    @property
+    def unhashed_password(self):
+        raise AttributeError('Cannot read unhashed password.')
+
+    @unhashed_password.setter
+    def unhashed_password(self, unhashed_password):
+        self.password = generate_password_hash(unhashed_password)
