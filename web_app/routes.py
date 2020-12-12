@@ -1,12 +1,32 @@
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint, redirect, url_for, request
 
 from web_app.models import *
+from werkzeug.security import check_password_hash
+from flask_login import login_user, logout_user, current_user
 
 routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 def login():
-    return render_template('login.html')
+    if request.method == 'POST':
+        #check if the login is already used
+        user = None
+        if request.args.get('login') and request.args.get('password'):
+            if User.query.filter_by(login=request.args.get('login')).first():
+                user = User.query.filter_by(login=request.args.get('login')).first()
+                if check_password_hash(user.password, request.args.get('password')):
+                    #login
+                    login_user(user)
+                    return redirect(url_for('routes.main'))
+        return render_template('login.html')        
+    else:
+        return render_template('login.html')
+
+@main.route('/logout', methods=['POST'])
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
 
 @routes.route('/main', methods=['GET'])
 def main():
