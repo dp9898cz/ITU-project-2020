@@ -6,7 +6,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 
 routes = Blueprint('routes', __name__)
 
-@routes.route('/')
+@routes.route('/',  methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
         #check if the login is already used
