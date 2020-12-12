@@ -426,16 +426,18 @@ h3 {
     border-radius: 10px;
 }
 
-.content table th{
+.content table th {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
-.content table td{
+
+.content table td {
     padding: 12px;
     text-align: center;
     background-color: #000;
 }
+
 .content table tr {
     transition: all .2s ease-in;
     cursor: pointer;

@@ -1,20 +1,19 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
 <div class="content">
-    <div class="content_for_forms">
-        <h1>Zadat úklid</h1>
-        <div class="form-content">
-            <div class="grid">
-                <h2>Pokoj:</h2>
-            </div>
-            <div class="grid"><input type="number"></div>
-            <div class="grid">
-                <h2>Datum:</h2>
-            </div>
-            <div class="grid"> <input type="date"></div>
-            <div class="grid">
-                <h2>Typ:</h2>
-            </div>
-            <div class="grid"><select name="type">
+    <h1>Zadat úklid</h1>
+    <div class="form-content">
+        <div class="grid">
+            <h2>Pokoj</h2>
+        </div>
+        <div class="grid"><input type="number"></div>
+        <div class="grid">
+            <h2>Datum</h2>
+        </div>
+        <div class="grid"> <input type="date"></div>
+        <div class="grid">
+            <h2>Typ</h2>
+        </div>
+        <div class="grid"><select name="type">
             <option value="1" selected>Standartní</option>
             <option value="2">Přeúklid</option>
             <option value="3">Minibar</option>
