@@ -25,7 +25,7 @@ def zadat_zavadu():
 def pobyty():
     return render_template('pobyty.html')
 
-@routes.route('/uklizeci', methods=['GET'])
+@routes.route('/zadat_uklizeci', methods=['GET'])
 def zadat_uklizeci():
     return render_template('zadat_uklizeci.html')
 
