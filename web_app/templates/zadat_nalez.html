@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
 <div class="content">
     <h1>Zadat nález</h1>
-    <div class="form-content">
-        <form>
+    <form>
+        <div class="form-content">
             <div class="grid">
                 <h2>Pokoj:</h2>
             </div>
@@ -15,9 +15,9 @@
                 <h2>Popis nálezu:</h2>
             </div>
             <div class="grid"><input type="text"></div>
-            <div class="grid"><input type="submit" value="Všechny nálezy"></div>
+            <div class="grid"><a>Všechny nálezy</a></div>
             <div class="grid"><input type="submit" value="Zadat"></div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 {% endblock %}

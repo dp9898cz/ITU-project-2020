@@ -1,22 +1,25 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
 <div class="content">
     <h1>Zadat závadu</h1>
-    <div class="form-content">
-        <div class="grid">
-            <h2>Pokoj:</h2>
-        </div>
-        <div class="grid"><input type="number"></div>
-        <div class="grid">
-            <h2>Datum:</h2>
-        </div>
-        <div class="grid"> <input type="date"></div>
-        <div class="grid">
-            <h2>Popis závady:</h2>
-        </div>
-        <div class="grid"><input type="text"></div>
+    <form>
+        <div class="form-content">
 
-        <div class="grid"><input type="submit" value="Seznam všech závad"></div>
-        <div class="grid"><input type="submit" value="Zadat"></div>
-    </div>
+            <div class="grid">
+                <h2>Pokoj:</h2>
+            </div>
+            <div class="grid"><input type="number"></div>
+            <div class="grid">
+                <h2>Datum:</h2>
+            </div>
+            <div class="grid"> <input type="date"></div>
+            <div class="grid">
+                <h2>Popis závady:</h2>
+            </div>
+            <div class="grid"><input type="text"></div>
+
+            <div class="grid"><a>Seznam všech závad</a></div>
+            <div class="grid"><input type="submit" value="Zadat"></div>
+        </div>
+    </form>
 </div>
 {% endblock %}
