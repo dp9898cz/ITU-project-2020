@@ -114,7 +114,7 @@ body {
 }
 
 .level:hover::before {
-    width: 105px;
+    width: 135px;
 }
 
 .main-menu ul li {
@@ -172,7 +172,7 @@ body {
 
 /* Menu mobile*/
 
-@media(max-width: 920px) {
+@media(max-width: 940px) {
     .menu {
         background-color: rgb(218, 68, 68);
         margin: 0;
@@ -320,7 +320,11 @@ body {
     height: 4rem;
 }
 
-@media (min-width: 800px) {
+.grid p {
+    font-size: 20px;
+}
+
+@media (min-width: 940px) {
     .form-content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -334,6 +338,24 @@ h1 {
     font-weight: 400;
     text-decoration: underline 2px;
     text-underline-offset: 30px;
+}
+
+@media (max-width: 1090px) {
+    .form-content h2 {
+        align-content: center !important;
+    }
+    .grid h2 {
+        font-size: 30px !important;
+    }
+    .grid p {
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 980px) {
+    .form-content h2 {
+        padding: 0px !important;
+    }
 }
 
 h3 {
@@ -369,6 +391,12 @@ h3 {
     font-size: 30px;
 }
 
+.form-content input[type=datetime-local] {
+    width: 95%;
+    height: 60px;
+    font-size: 30px;
+}
+
 .form-content select {
     width: 95%;
     height: 60px;
@@ -379,9 +407,11 @@ h3 {
     font-size: 25px;
     padding: 7px;
     position: relative;
-    top: -2px;
-    padding-left: 30%;
-    padding-right: 30%;
+    top: 0px;
+    width: 90%;
+    min-width: 200px;
+    text-decoration: none;
+    display: inline-block;
     border-radius: 8px;
     color: rgb(255, 255, 255);
     background-color: rgb(218, 68, 68);
@@ -413,6 +443,11 @@ h3 {
 }
 
 .form-content input[type=text]:hover {
+    box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
+    transition: 0.2s;
+}
+
+.form-content input[type=datetime-local]:hover {
     box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
     transition: 0.2s;
 }
