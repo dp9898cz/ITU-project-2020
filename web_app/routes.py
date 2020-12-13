@@ -22,7 +22,7 @@ def login():
         flash('Špatně zadané údaje')
         return render_template('login.html')        
     else:
-        if current_user:
+        if current_user.is_authenticated:
             return redirect(url_for('routes.main'))
         return render_template('login.html')
 
@@ -70,7 +70,7 @@ def zadat_uklid():
                 d = Cleanup(
                     room = Room.query.filter_by(number = request.form.get('number')).first(),
                     c_type = CleanupType(int(request.form.get('type'))),
-                    to_be_completed = datetime.datetime.strptime(request.form.get('date'), "%Y-%m-%d %h:%m") if request.form.get('date') else datetime.datetime.now() ,
+                    to_be_completed = datetime.datetime.strptime(request.form.get('date'), "%Y-%m-%d %H:%M") if request.form.get('date') else datetime.datetime.now() ,
                 )
                 db.session.add(d)
                 db.session.commit()
