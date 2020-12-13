@@ -39,7 +39,7 @@ def main():
 
 
 
-@routes.route('/zadat_uklizeci', methods=['GET'])
+@routes.route('/zadat_uklizeci', methods=['GET', 'POST'])
 def zadat_uklizeci():
     if request.method == 'POST':
         if request.form.get('login') and request.form.get('password'):
