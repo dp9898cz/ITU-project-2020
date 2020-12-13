@@ -80,19 +80,22 @@ def nalezy():
 def zadat_nalez():
     if request.method == 'POST':
         if request.form.get('number') and request.form.get('description'):
-            pass
-            d = Discovery(
-                room = Room.query.filter_by(number = request.form.get('number')).first(),
-                description = request.form.get('description'),
-                date = datetime.datetime.strptime(request.form.get('date'), "%d.%m.%Y") if request.form.get('date') else datetime.datetime.now() ,
-            )
-            db.session.add(d)
-            db.session.commit()
-            flash("Úspěšně vytvořeno.")
-            return redirect(url_for('routes.zadat_nalez'))
+            if not Room.query.filter_by(number = request.form.get('number')).first():
+                flash("Pokoj s tímto číslem neexistuje")
+            else:
+                d = Discovery(
+                    room = Room.query.filter_by(number = request.form.get('number')).first(),
+                    description = request.form.get('description'),
+                    date = datetime.datetime.strptime(request.form.get('date'), "%Y-%m-%d") if request.form.get('date') else datetime.datetime.now() ,
+                )
+                db.session.add(d)
+                db.session.commit()
+                flash("Úspěšně vytvořeno.")
+                return redirect(url_for('routes.zadat_nalez'))
         else:
             flash("Musíte zadat číslo pokoje a popis nálezu.")
-            return redirect(url_for('routes.zadat_nalez'))
+        
+        return redirect(url_for('routes.zadat_nalez'))
     else:
         return render_template('zadat_nalez.html')
 
