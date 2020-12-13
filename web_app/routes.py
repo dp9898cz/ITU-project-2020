@@ -3,6 +3,7 @@ from flask import render_template, Blueprint, redirect, url_for, request, flash
 from web_app.models import *
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user, current_user, login_required
+import datetime
 
 routes = Blueprint('routes', __name__)
 
@@ -80,6 +81,15 @@ def zadat_nalez():
     if request.method == 'POST':
         if request.form.get('number') and request.form.get('description'):
             pass
+            d = Discovery(
+                room = Room.query.filter_by(number = request.form.get('number')).first(),
+                description = request.form.get('description'),
+                date = datetime.datetime.strptime(request.form.get('date'), "%d.%m.%Y") if request.form.get('date') else datetime.datetime.now() ,
+            )
+            db.session.add(d)
+            db.session.commit()
+            flash("Úspěšně vytvořeno.")
+            return redirect(url_for('routes.zadat_nalez'))
         else:
             flash("Musíte zadat číslo pokoje a popis nálezu.")
             return redirect(url_for('routes.zadat_nalez'))
