@@ -10,7 +10,7 @@
         {% for n in nalezy %}
             <tr>
                 <td>{{ n.room.number }}</td>
-                <td>{{ n.date }}</td>
+                <td>{{ n.date.strftime('%d-%m-%Y') }}</td>
                 <td>{{ n.description }}</td>
             </tr>
         {% endfor %}

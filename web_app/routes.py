@@ -22,6 +22,8 @@ def login():
         flash('Špatně zadané údaje')
         return render_template('login.html')        
     else:
+        if current_user:
+            return redirect(url_for('routes.main'))
         return render_template('login.html')
 
 @routes.route('/logout', methods=['POST'])
@@ -58,9 +60,28 @@ def uklizeci():
     }
     return render_template('uklizeci.html', **context)
 
-@routes.route('/zadat_uklid', methods=['GET'])
+@routes.route('/zadat_uklid', methods=['GET', 'POST'])
 def zadat_uklid():
-    return render_template('zadat_uklid.html')
+    if request.method == 'POST':
+        if request.form.get('number') and request.form.get('type') and request.form.get('date'):
+            if not Room.query.filter_by(number = request.form.get('number')).first():
+                flash("Pokoj s tímto číslem neexistuje")
+            else:
+                d = Cleanup(
+                    room = Room.query.filter_by(number = request.form.get('number')).first(),
+                    c_type = CleanupType(int(request.form.get('type'))),
+                    to_be_completed = datetime.datetime.strptime(request.form.get('date'), "%Y-%m-%d %h:%m") if request.form.get('date') else datetime.datetime.now() ,
+                )
+                db.session.add(d)
+                db.session.commit()
+                flash("Úspěšně vytvořeno.")
+                return redirect(url_for('routes.zadat_uklid'))
+        else:
+            flash("Musíte zadat číslo pokoje, datum a typ úklidu.")
+        
+        return redirect(url_for('routes.zadat_uklid'))
+    else:
+        return render_template('zadat_uklid.html')
 
 @routes.route('/zavady', methods=['GET'])
 def zavady():

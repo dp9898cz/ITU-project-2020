@@ -10,7 +10,7 @@
         {% for zavada in zavady %}
             <tr>
                 <td>{{ zavada.room.number }}</td>
-                <td>{{ zavada.date }}</td>
+                <td>{{ zavada.date.strftime('%d-%m-%Y') }}</td>
                 <td>{{ zavada.description }}</td>
             </tr>
         {% endfor %}

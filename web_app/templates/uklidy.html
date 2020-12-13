@@ -13,8 +13,8 @@
         {% for u in uklidy %}
             <tr>
                 <td>{{ u.room.number }}</td>
-                <td>{{ u.to_be_completed }} </td>
-                <td>{{ u.to_be_completed }} </td>
+                <td>{{ u.to_be_completed.strftime('%h:%m %d-%m-%Y') }} </td>
+                <td>{{ u.to_be_completed.strftime('%h:%m %d-%m-%Y') }} </td>
                 <td>{{ u.c_type }}</td>
                 <td><input type="checkbox" {% if u.completed %}checked{% endif %}></td>
             </tr>
