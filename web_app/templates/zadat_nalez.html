@@ -1,21 +1,21 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
 <div class="content">
     <h1>Zadat nález</h1>
-    <form>
+    <form method="POST" action="{{ url_for('routes.zadat_nalez') }}">
         <div class="form-content">
             <div class="grid">
-                <h2>Pokoj:</h2>
+                <h2>Číslo pokoje:</h2>
             </div>
             <div class="grid"><input type="number" name="number" id="number"></div>
             <div class="grid">
                 <h2>Datum:</h2>
             </div>
-            <div class="grid"> <input type="date" name="date" id="number"></div>
+            <div class="grid"> <input type="date" name="date" id="date"></div>
             <div class="grid">
                 <h2>Popis nálezu:</h2>
             </div>
-            <div class="grid"><input type="text"></div>
-            <div class="grid"><a>Všechny nálezy</a></div>
+            <div class="grid"><input type="text" name="description" id="description"></div>
+            <div class="grid"><a href="{{url_for('main.nalezy')}}">Všechny nálezy</a></div>
             <div class="grid"><input type="submit" value="Zadat"></div>
         </div>
     </form>

@@ -75,9 +75,16 @@ def nalezy():
     }
     return render_template('nalezy.html', **context)
 
-@routes.route('/zadat_nalez', methods=['GET'])
+@routes.route('/zadat_nalez', methods=['POST', 'GET'])
 def zadat_nalez():
-    return render_template('zadat_nalez.html')
+    if request.method == 'POST':
+        if request.form.get('number') and request.form.get('description'):
+            pass
+        else:
+            flash("Musíte zadat číslo pokoje a popis nálezu.")
+            return redirect(url_for('routes.zadat_nalez'))
+    else:
+        return render_template('zadat_nalez.html')
 
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
