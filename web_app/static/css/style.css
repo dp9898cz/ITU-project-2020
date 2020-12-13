@@ -385,6 +385,12 @@ h3 {
     font-size: 30px;
 }
 
+.form-content input[type=password] {
+    width: 95%;
+    height: 60px;
+    font-size: 30px;
+}
+
 .form-content input[type=date] {
     width: 95%;
     height: 60px;
@@ -443,6 +449,11 @@ h3 {
 }
 
 .form-content input[type=text]:hover {
+    box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
+    transition: 0.2s;
+}
+
+.form-content input[type=password]:hover {
     box-shadow: 0 0px 0px 0 rgb(68, 163, 218, 5), 0 0px 6px 0 rgb(68, 163, 218, 42);
     transition: 0.2s;
 }
