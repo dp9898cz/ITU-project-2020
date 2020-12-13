@@ -36,18 +36,9 @@ def logout():
 def main():
     return render_template('main.html')
 
-@routes.route('/zadat_pobyt', methods=['GET'])
-def zadat_pobyt():
-    return render_template('zadat_pobyt.html')
-
-
 @routes.route('/zadat_zavadu', methods=['GET'])
 def zadat_zavadu():
     return render_template('zadat_zavadu.html')
-
-@routes.route('/pobyty', methods=['GET'])
-def pobyty():
-    return render_template('pobyty.html')
 
 @routes.route('/zadat_uklizeci', methods=['GET'])
 def zadat_uklizeci():
@@ -120,10 +111,12 @@ def zadat_nalez():
     else:
         return render_template('zadat_nalez.html')
 
+
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
     context = {
-        "uklidy": Cleanup.query.order_by(Cleanup.to_be_completed.desc()).all()
+        "uklidy": Cleanup.query.order_by(Cleanup.to_be_completed.desc()).all(),
+        "enum" : CleanupType.__members__
     }
     return render_template('uklidy.html', **context)
 

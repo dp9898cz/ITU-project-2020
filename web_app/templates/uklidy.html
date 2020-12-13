@@ -15,7 +15,7 @@
                 <td>{{ u.room.number }}</td>
                 <td>{{ u.to_be_completed.strftime('%H:%M %d-%m-%Y') }} </td>
                 <td>{{ u.to_be_completed.strftime('%H:%M %d-%m-%Y') }} </td>
-                <td>{{ u.c_type[12:] }}</td>
+                <td>{{ u.c_type.name }}</td>
                 <td><input type="checkbox" {% if u.completed %}checked{% endif %} disabled></td>
             </tr>
         {% endfor %}
