@@ -7,9 +7,9 @@
                 <h2>Číslo pokoje:</h2>
             </div>
             
-            <div class="grid"><input type="number" name="number" id="number" class="pokoj-check" onfocusout="kontrola_pokoje()"></div>
+            <div class="grid"><input type="number" name="number" id="number" class="pokoj-check" onkeyup="kontrola_pokoje(this.value)"></div>
             <script>
-                function kontrola_pokoje() {
+                function kontrola_pokoje(str) {
                     var obsah = document.getElementById("number").innerHTML; 
                     var rooms = {{rooms}};
                     print(rooms);
