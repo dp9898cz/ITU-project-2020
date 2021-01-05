@@ -169,7 +169,7 @@ def zadat_uklid():
         
         return redirect(url_for('routes.zadat_uklid'))
     else:
-        return render_template('zadat_uklid.html', rooms)
+        return render_template('zadat_uklid.html', **context)
 
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
