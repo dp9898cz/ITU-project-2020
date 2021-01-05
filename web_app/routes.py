@@ -85,6 +85,7 @@ def zadat_zavadu():
                     room = Room.query.filter_by(number = request.form.get('number')).first(),
                     description = request.form.get('description'),
                     date = datetime.datetime.strptime(request.form.get('date'), "%Y-%m-%d") if request.form.get('date') else datetime.datetime.now() ,
+                    completed = None,
                 )
                 db.session.add(d)
                 db.session.commit()
