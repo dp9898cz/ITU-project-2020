@@ -8,3 +8,6 @@ function myFunction() {
         document.getElementById("active").style.float = "left";
     }
 }
+kontrola_pokoje(this.value){
+    
+}
