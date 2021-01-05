@@ -7,7 +7,7 @@ function myFunction() {
         x.className = "topnav";
         document.getElementById("active").style.float = "left";
     }
-    function kontrola_pokoje() {
+    function kontrolapokoje() {
         var obsah = document.getElementById("number").innerHTML; 
         var rooms = {{rooms}};
         print(rooms);
