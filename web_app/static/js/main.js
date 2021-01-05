@@ -7,7 +7,8 @@ function myFunction() {
         x.className = "topnav";
         document.getElementById("active").style.float = "left";
     }
-    function kontrolapokoje() {
+}
+    function kontrola_pokoje() {
         var obsah = document.getElementById("number").innerHTML; 
         var rooms = {{rooms}};
         print(rooms);
@@ -21,9 +22,9 @@ function myFunction() {
         {% endfor %}*/
 
         if (nalezen == 0) {
-                document.getElementById("pokoj-check").style.box-shadow = "none";
+               /* document.getElementById("pokoj-check").style.box-shadow = "none";*/
         }else (nalezen == 1){
-                document.getElementById("pokoj-check").style.box-shadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
+               /* document.getElementById("pokoj-check").style.box-shadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";*/
                 alert("Číslo tohoto pokoje neexistuje!");
             } 
 }
