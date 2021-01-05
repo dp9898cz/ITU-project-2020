@@ -8,6 +8,8 @@ function myFunction() {
         document.getElementById("active").style.float = "left";
     }
 }
-kontrola_pokoje(this.value){
-    
-}
+/*function kontrola_pokoje(str){
+    var rooms = {{rooms | safe}};
+    print(rooms);
+    alert("hey");                
+}*/
