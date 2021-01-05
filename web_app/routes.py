@@ -41,9 +41,6 @@ def main():
 
 @routes.route('/zadat_uklizeci', methods=['GET', 'POST'])
 def zadat_uklizeci():
-    context = {
-        "rooms" : Room.query.all()
-    }
     if request.method == 'POST':
         if request.form.get('login') and request.form.get('password'):
             if User.query.filter_by(login = request.form.get('login')).first():
@@ -145,6 +142,9 @@ def zadat_nalez():
 
 @routes.route('/zadat_uklid', methods=['GET', 'POST'])
 def zadat_uklid():
+    context = {
+        "rooms" : Room.query.all()
+        }
     if request.method == 'POST':
         if request.form.get('number') and request.form.get('type') and request.form.get('date'):
             if not Room.query.filter_by(number = request.form.get('number')).first():
@@ -164,7 +164,7 @@ def zadat_uklid():
         
         return redirect(url_for('routes.zadat_uklid'))
     else:
-        return render_template('zadat_uklid.html')
+        return render_template('zadat_uklid.html', **context)
 
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
