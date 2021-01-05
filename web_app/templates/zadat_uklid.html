@@ -12,14 +12,14 @@
                     var rooms = {{rooms}};
                     print(rooms);
                     alert("hey");
-                    {% for u in uklidy %}
+                  /*  {% for u in uklidy %}
                         var id = {{ u.room.number }};
                         var nalezen = 0;
                         if (id == str) {
                             nalezen = 1;
                             break;
                         } 
-                    {% endfor %}*/
+                    {% endfor %}
                     if (nalezen == 0) {
                             document.getElementById("pokoj-check").style.box-shadow = "none";
                     }else (nalezen == 1){
@@ -27,7 +27,7 @@
                             alert("Číslo tohoto pokoje neexistuje!");
                         } 
                     }
-                }
+                }*/
             </script>
             <div class="grid">
                 <h2>Datum a čas:</h2>

@@ -41,6 +41,9 @@ def main():
 
 @routes.route('/zadat_uklizeci', methods=['GET', 'POST'])
 def zadat_uklizeci():
+    context = {
+        "rooms" : Room.query.all()
+    }
     if request.method == 'POST':
         if request.form.get('login') and request.form.get('password'):
             if User.query.filter_by(login = request.form.get('login')).first():
