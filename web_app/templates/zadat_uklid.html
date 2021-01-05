@@ -9,8 +9,8 @@
             <div class="grid"><input type="number" name="number" id="number" class="pokoj-check" onkeyup="kontrola_pokoje(this.value)"></div>
             <script>
                 function kontrola_pokoje(str) {
-                    var rooms = {{numbers | safe}};
-                    print(numbers);
+                    var rooms = {{rooms | safe}};
+                    print(rooms);
                     alert("hey");
                   /*  {% for u in uklidy %}
                         var id = {{ u.room.number }};
