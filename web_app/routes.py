@@ -142,13 +142,10 @@ def zadat_nalez():
 
 @routes.route('/zadat_uklid', methods=['GET', 'POST'])
 def zadat_uklid():
-    context = {
-        "rooms" : Room.query.all()
-        }
     rooms = Room.query.all()
-    numbers = 0
+    numbers = []  
     for r in rooms:
-        numbers += r.number
+        numbers.append(r.number)
     
     if request.method == 'POST':
         if request.form.get('number') and request.form.get('type') and request.form.get('date'):
