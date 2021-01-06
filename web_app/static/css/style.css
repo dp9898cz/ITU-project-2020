@@ -365,11 +365,7 @@ h3 {
     font-weight: 400;
 }
 
-#error{
-    display: none;
-    font-size: 10px !important;
-    color: red;
-}
+
 .form-content h2 {
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
@@ -601,4 +597,10 @@ tr:hover {
     background-color: black;
     transform: scale(1.02);
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgb(0, 0, 0, 0.2);
+}
+/*---------------------------------------------*/
+#error{
+    display: none;
+    font-size: 10px !important;
+    color: red;
 }
