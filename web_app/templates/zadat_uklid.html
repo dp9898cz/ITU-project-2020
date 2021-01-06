@@ -7,7 +7,7 @@
                 <h2>Číslo pokoje:</h2>
             </div>
             
-            <div class="grid" id="pokoj-check"><input type="number" name="number" id="number"  onkeyup="kontrola_pokoje(this.value)"></div>
+            <div class="grid" ><input type="number" name="number" id="pokoj-check"  onkeyup="kontrola_pokoje(this.value)"></div>
             <script>
                 function kontrola_pokoje(str) {
                     var rooms = {{rooms | safe}};
