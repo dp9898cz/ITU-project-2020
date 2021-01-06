@@ -599,8 +599,3 @@ tr:hover {
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgb(0, 0, 0, 0.2);
 }
 /*---------------------------------------------*/
-span #error{
-    display: none;
-    font-size: 10px !important;
-    color: red;
-}
