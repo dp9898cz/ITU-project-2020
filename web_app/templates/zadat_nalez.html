@@ -6,7 +6,33 @@
             <div class="grid">
                 <h2>Číslo pokoje:</h2>
             </div>
-            <div class="grid"><input type="number" name="number" id="number"></div>
+            <div class="grid" >
+                <input type="number" name="number" id="pokoj-check"  onkeyup="kontrola_pokoje(this.value)">
+                <span id="error" style="color:red;font-size:10px;display=none">Tento pokoj neexistuje</span>
+            </div>
+            <script>
+                function kontrola_pokoje(str) {
+                    var rooms = {{rooms | safe}};
+                    var nalezen = 0;
+                    for (i = 0; i < rooms.length; i++) {
+                        if(str == rooms[i]){
+                            nalezen = 1;
+                        }
+                    } 
+                    if (nalezen == 1) {
+                        document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
+                        document.getElementById("error").style.display="none";
+                    }else if(nalezen == 0){
+                        document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
+                        document.getElementById("error").style.display="block";
+                        } 
+                    if(str == ""){
+                        document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
+                        document.getElementById("error").style.display="none";
+                    }
+                    }
+                
+            </script>
             <div class="grid">
                 <h2>Datum:</h2>
             </div>

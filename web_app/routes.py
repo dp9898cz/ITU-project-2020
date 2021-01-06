@@ -76,6 +76,13 @@ def uklizeci():
 
 @routes.route('/zadat_zavadu', methods=['GET', 'POST'])
 def zadat_zavadu():
+    rooms = Room.query.all()
+    numbers = []  
+    for r in rooms:
+       numbers.append(r.number)
+    context = {
+        "rooms": numbers
+    }
     if request.method == 'POST':
         if request.form.get('number') and request.form.get('description'):
             if not Room.query.filter_by(number = request.form.get('number')).first():
@@ -96,7 +103,7 @@ def zadat_zavadu():
         
         return redirect(url_for('routes.zadat_zavadu'))
     else:
-        return render_template('zadat_zavadu.html')
+        return render_template('zadat_zavadu.html',**context)
 
 @routes.route('/zavady', methods=['GET'])
 def zavady():
@@ -117,6 +124,13 @@ def nalezy():
 
 @routes.route('/zadat_nalez', methods=['POST', 'GET'])
 def zadat_nalez():
+    rooms = Room.query.all()
+    numbers = []  
+    for r in rooms:
+       numbers.append(r.number)
+    context = {
+        "rooms": numbers
+    }
     if request.method == 'POST':
         if request.form.get('number') and request.form.get('description'):
             if not Room.query.filter_by(number = request.form.get('number')).first():
@@ -136,7 +150,7 @@ def zadat_nalez():
         
         return redirect(url_for('routes.zadat_nalez'))
     else:
-        return render_template('zadat_nalez.html')
+        return render_template('zadat_nalez.html',**context)
 
 
 
