@@ -365,6 +365,9 @@ h3 {
     font-weight: 400;
 }
 
+#error{
+    display: none;
+}
 .form-content h2 {
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
