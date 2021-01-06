@@ -15,7 +15,7 @@
                     var rooms = {{rooms | safe}};
                     var nalezen = 0;
                     for (i = 0; i < rooms.length; i++) {
-                        if(str === rooms[i]){
+                        if(str == rooms[i]){
                             nalezen = 1;
                         }
                     } 
@@ -26,7 +26,7 @@
                         document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
                         document.getElementById("error").style.display="block";
                         } 
-                    if(str === ""){
+                    if(str == ""){
                         document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
                         document.getElementById("error").style.display="none";
                     }

@@ -367,6 +367,8 @@ h3 {
 
 #error{
     display: none;
+    font-size: 10px;
+    color: red;
 }
 .form-content h2 {
     font-size: 40px;
