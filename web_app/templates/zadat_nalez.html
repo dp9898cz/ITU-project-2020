@@ -22,7 +22,8 @@
                     
                     ajax.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
-                            console.log(this.responseText);
+                            var roomnumbers = this.responseText.room.map(function (room) {return room.number});
+                            console.log(roomnumbers);
                         }
                     };
 
