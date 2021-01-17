@@ -15,8 +15,7 @@
                     var ajax = new XMLHttpRequest();
                     ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.json", true);
                     ajax.send();
-                    ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
-                    ajax.send();
+
                     ajax.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             console.log(this.responseText);
