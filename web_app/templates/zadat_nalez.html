@@ -13,7 +13,7 @@
             <script>
                 function kontrola_pokoje(str) {
                     var ajax = new XMLHttpRequest();
-                    ajax.open("GET", "", true);
+                    ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.json", true);
                     ajax.send();
 
                     ajax.onreadystatechange = function() {
