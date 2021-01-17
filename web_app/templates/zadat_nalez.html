@@ -20,34 +20,36 @@
                     ajax.send();*/
                     ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
                     ajax.send();
-                    var rooms ;
+                    
                     ajax.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             console.log(this.responseText);
-                            rooms = this.responseText.split('\n');
+                            var roomss = this.responseText;
+                            var rooms = roomss.split('\n');
+                            var nalezen = 0;
+                            for (i = 0; i < rooms.length; i++) {
+                                if(str == rooms[i]){
+                                    nalezen = 1;
+                                }
+                            } 
+                            if (nalezen == 1) {
+                                document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
+                                document.getElementById("error").style.display="none";
+                            }else if(nalezen == 0){
+                                document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
+                                document.getElementById("error").style.display="block";
+                                } 
+                            if(str == ""){
+                                document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
+                                document.getElementById("error").style.display="none";
+                            }
                           /*var roomnumbers = this.responseText.room.map(function (room) {return room.number});
                             console.log(roomnumbers);*/
                         }
                     };
 
                     /*var rooms = {{rooms | safe}};*/
-                    var nalezen = 0;
-                    for (i = 0; i < rooms.length; i++) {
-                        if(str == rooms[i]){
-                            nalezen = 1;
-                        }
-                    } 
-                    if (nalezen == 1) {
-                        document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
-                        document.getElementById("error").style.display="none";
-                    }else if(nalezen == 0){
-                        document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
-                        document.getElementById("error").style.display="block";
-                        } 
-                    if(str == ""){
-                        document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
-                        document.getElementById("error").style.display="none";
-                    }
+                    
                     }
                 
             </script>
