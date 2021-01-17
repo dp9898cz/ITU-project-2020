@@ -20,10 +20,11 @@
                     ajax.send();*/
                     ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
                     ajax.send();
+                    var rooms ;
                     ajax.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             console.log(this.responseText);
-                            var rooms = this.responseText.split('\n');
+                            rooms = this.responseText.split('\n');
                           /*var roomnumbers = this.responseText.room.map(function (room) {return room.number});
                             console.log(roomnumbers);*/
                         }
