@@ -13,7 +13,7 @@
             <script>
                 function kontrola_pokoje(str) {
                     var ajax = new XMLHttpRequest();
-                    ajax.open("GET", "postgres://hvahcpphomtrwf:65e5d855c2ce0cec911a4ad1234bcbde34aaeca3e5245d54ffcaa0b9bee63679@ec2-46-137-177-160.eu-west-1.compute.amazonaws.com:5432/d9m4ru2ru00bk5", true);
+                    ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
                     ajax.send();
 
                     ajax.onreadystatechange = function() {
