@@ -15,20 +15,21 @@
                     var ajax = new XMLHttpRequest();
                     /*ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.json", true);
                     ajax.send();
-                    ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
-                    ajax.send();*/
-                    ajax.open("GET", "https://hvahcpphomtrwf:65e5d855c2ce0cec911a4ad1234bcbde34aaeca3e5245d54ffcaa0b9bee63679@ec2-46-137-177-160.eu-west-1.compute.amazonaws.com:5432/d9m4ru2ru00bk5", true);
-                    ajax.send();
                     
+                    ajax.open("GET", "https://hvahcpphomtrwf:65e5d855c2ce0cec911a4ad1234bcbde34aaeca3e5245d54ffcaa0b9bee63679@ec2-46-137-177-160.eu-west-1.compute.amazonaws.com:5432/d9m4ru2ru00bk5", true);
+                    ajax.send();*/
+                    ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
+                    ajax.send();
                     ajax.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             console.log(this.responseText);
-                            var roomnumbers = this.responseText.room.map(function (room) {return room.number});
-                            console.log(roomnumbers);
+                            var rooms = this.responseText;
+                          /*var roomnumbers = this.responseText.room.map(function (room) {return room.number});
+                            console.log(roomnumbers);*/
                         }
                     };
 
-                    var rooms = {{rooms | safe}};
+                    /*var rooms = {{rooms | safe}};*/
                     var nalezen = 0;
                     for (i = 0; i < rooms.length; i++) {
                         if(str == rooms[i]){
