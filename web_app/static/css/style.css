@@ -318,6 +318,7 @@ body {
 .grid {
     padding: 1rem;
     height: 4rem;
+    position: relative;
 }
 
 .grid p {
@@ -656,4 +657,13 @@ tr:hover {
 }
 .text.strong{
     color:#23ad5c;
+}
+form .grid .showBtn{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px;
+    font-size: 600;
 }
