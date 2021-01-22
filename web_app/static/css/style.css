@@ -379,7 +379,7 @@ h3 {
     width: 95%;
     height: 60px;
     font-size: 30px;
-    border-radius: 3px;
+    border-radius: 9px;
 }
 
 .form-content input[type=number] {
@@ -672,5 +672,5 @@ form .grid .showBtn{
 ::placeholder{
     color: #424242;
     opacity: 0.5;
-    font-size: 25px;
+    font-size: 18px;
 }
