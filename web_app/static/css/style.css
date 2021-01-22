@@ -441,6 +441,7 @@ h3 {
     background-color: rgb(218, 68, 68);
     box-shadow: 4px 4px 3px rgb(160, 160, 160);
     border: 2px solid rgb(218, 68, 68);
+    cursor: pointer;
 }
 
 .form-content input[type=submit]:hover {
