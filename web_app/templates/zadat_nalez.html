@@ -39,7 +39,7 @@
                                 document.getElementById("error").style.display="none";
                             }
                         }
-                        getOutput();
+                        myPhpFunctionCall();
                     };
                     
                     /*
@@ -88,18 +88,22 @@
                         application_name  : 'postgres.js', // Default application_name
                     }
                     })*/
-                    function getOutput() {
-                    $.ajax({
-                        url:'myAjax.php',
-                        complete: function (response) {
-                            $('#output').html(response.responseText);
-                        },
-                        error: function () {
-                            $('#output').html('Bummer: there was an error!');
+                    function myPhpFunctionCall()
+                    {
+                    var xmlhttp;
+                    xmlhttp=new XMLHttpRequest();
+
+                    xmlhttp.onreadystatechange=function()
+                    {
+                        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                        {
+                        // Do something with the results here
                         }
-                    });
-                    return false;
                     }
+                    xmlhttp.open("GET","myAjax.php",true);
+                    xmlhttp.send();
+                    }
+                    
                     
                 
             </script>
