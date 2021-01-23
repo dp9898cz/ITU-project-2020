@@ -39,7 +39,10 @@
                                 document.getElementById("error").style.display="none";
                             }
                         }
-                    };/*
+                        getOutput();
+                    };
+                    
+                    /*
                     var ajax2 = new XMLHttpRequest();
                     ajax2.open("GET", "ec2-46-137-177-160.eu-west-1.compute.amazonaws.com/d9m4ru2ru00bk5", true,"hvahcpphomtrwf","65e5d855c2ce0cec911a4ad1234bcbde34aaeca3e5245d54ffcaa0b9bee63679");
                     ajax2.send();
@@ -85,7 +88,18 @@
                         application_name  : 'postgres.js', // Default application_name
                     }
                     })*/
-
+                    function getOutput() {
+                    $.ajax({
+                        url:'myAjax.php',
+                        complete: function (response) {
+                            $('#output').html(response.responseText);
+                        },
+                        error: function () {
+                            $('#output').html('Bummer: there was an error!');
+                        }
+                    });
+                    return false;
+                    }
                     
                 
             </script>
