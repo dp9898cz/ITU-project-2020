@@ -29,14 +29,41 @@
                     rs.MoveFirst
                     while(!rs.eof)
                     {
-                    document.write(rs.fields(1));
+                        if(str == rs.fields(1)){
+                                    document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
+                                    document.getElementById("error").style.display="none";
+                                
+                        }else if(str != rs.fields(1)){
+                                    document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
+                                    document.getElementById("error").style.display="block";
+                                    } 
+                                if(str == ""){
+                                    document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
+                                    document.getElementById("error").style.display="none";
+                                }
+                    rs.print;
                     rs.movenext;
                     }
 
                     rs.close;
                     connection.close; 
-
-                    ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
+                    
+                    /*const sql = postgres('postgres://hvahcpphomtrwf:65e5d855c2ce0cec911a4ad1234bcbde34aaeca3e5245d54ffcaa0b9bee63679@ec2-46-137-177-160.eu-west-1.compute.amazonaws.com:5432/d9m4ru2ru00bk5', {
+                    port            : 5432,       // Postgres server port
+                    database        : 'd9m4ru2ru00bk5',         // Name of database to connect to
+                    username        : 'hvahcpphomtrwf',         // Username of database user
+                    password        : '65e5d855c2ce0cec911a4ad1234bcbde34aaeca3e5245d54ffcaa0b9bee63679',         // Password of database user
+                    transform       : {
+                        column            : fn, // Transforms incoming column names
+                        value             : fn, // Transforms incoming row values
+                        row               : fn  // Transforms entire rows
+                    },
+                    connection      : {
+                        application_name  : 'postgres.js', // Default application_name
+                    }
+                    })
+*/
+                   /* ajax.open("GET", "https://data.heroku.com/dataclips/pdbhlscepyvsjyxaprgjocvqktac.csv", true);
                     ajax.send();
                     
                     ajax.onreadystatechange = function() {
@@ -61,8 +88,7 @@
                                 document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
                                 document.getElementById("error").style.display="none";
                             }
-                          /*var roomnumbers = this.responseText.room.map(function (room) {return room.number});
-                            console.log(roomnumbers);*/
+                          
                         }
                     };
 
