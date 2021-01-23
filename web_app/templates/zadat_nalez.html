@@ -18,6 +18,7 @@
                     
                     ajax.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
+                            console.log("Data from heroku:");
                             console.log(this.responseText);
                             var roomss = this.responseText;
                             var rooms = roomss.split('\n');
@@ -39,7 +40,7 @@
                                 document.getElementById("error").style.display="none";
                             }
                         }
-                        myPhpFunctionCall();
+                        console.log(";");
                     };
                     
                     /*
@@ -88,23 +89,7 @@
                         application_name  : 'postgres.js', // Default application_name
                     }
                     })*/
-                    function myPhpFunctionCall()
-                    {
-                    var xmlhttp;
-                    xmlhttp=new XMLHttpRequest();
-
-                    xmlhttp.onreadystatechange=function()
-                    {
-                        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                        {
-                        // Do something with the results here
-                        }
-                    }
-                    xmlhttp.open("GET","myAjax.php",true);
-                    xmlhttp.send();
-                    }
-                    
-                    
+                        
                 
             </script>
             <div class="grid">
