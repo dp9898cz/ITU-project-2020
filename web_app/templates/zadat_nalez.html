@@ -20,6 +20,7 @@
                         if (this.readyState == 4 && this.status == 200) {
                             console.log("Data from heroku:");
                             console.log(this.responseText);
+                            
                             var roomss = this.responseText;
                             var rooms = roomss.split('\n');
                             var nalezen = 0;
@@ -31,16 +32,19 @@
                             if (nalezen == 1) {
                                 document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
                                 document.getElementById("error").style.display="none";
+                                console.log("found;");
                             }else if(nalezen == 0){
                                 document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
                                 document.getElementById("error").style.display="block";
+                                console.log("not found;");
                                 } 
                             if(str == ""){
                                 document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
                                 document.getElementById("error").style.display="none";
+                                console.log("empty;");
                             }
                         }
-                        console.log(";");
+                        
                     };
                     
                     /*
