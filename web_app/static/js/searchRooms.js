@@ -18,6 +18,7 @@ searchField.addEventListener("keyup",(e) => {
             method: "POST",
 
         })
+            .then((text)=>text.json())
             .then((text)=>{console.log(text);
         });
     }
