@@ -12,7 +12,7 @@ searchField.addEventListener("keyup",(e) => {
             data: JSON.stringify({searchValue}),
             dataType: "json",
             success: function (responce) {
-                console.log(responce);   
+                console.log(responce.message);   
                 if (responce == "found") {
                     document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
                     document.getElementById("error").style.display="none";
