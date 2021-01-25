@@ -40,7 +40,7 @@ def main():
 
 
 @routes.route('/search-rooms', methods=['POST', 'GET'])
-def search_rooms(request):
+def search_rooms():
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
         if search_str == "":
