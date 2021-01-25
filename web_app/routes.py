@@ -46,18 +46,38 @@ def search_rooms():
         search_str2 = request.get_json()
         search_str = search_str2["searchValue"]
         if search_str == "":
-            response = make_response(jsonify({"message": "empty"}),200,)
+            response = make_response(
+                jsonify(
+                    {"message": "empty"}
+                ),
+                200,
+            )
             response.headers["Content-Type"] = "application/json"
             return response
         if Room.query.filter_by(number=search_str).first():
-            response = make_response(jsonify({"message": "found"}),200,)
+            response = make_response(
+                jsonify(
+                    {"message": "found"}
+                ),
+                200,
+            )
             response.headers["Content-Type"] = "application/json"
             return response
         else:
-            response = make_response(jsonify({"message": search_str,"string":"notfound"}),200,)
+            response = make_response(
+                jsonify(
+                    {"message": "notfound"}
+                ),
+                200,
+            )
             response.headers["Content-Type"] = "application/json"
             return response
-    response = make_response(jsonify({"message": "notfound"}),200,)
+    response = make_response(
+        jsonify(
+            {"message": "notfound"}
+        ),
+        200,
+    )
     response.headers["Content-Type"] = "application/json"
     return response
 
