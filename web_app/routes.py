@@ -39,7 +39,7 @@ def main():
     return render_template('main.html')
 
 
-@routes.route('/search_rooms',  methods=['POST', 'GET'])
+@routes.route('/search-rooms',  methods=['POST', 'GET'])
 def search_rooms(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')

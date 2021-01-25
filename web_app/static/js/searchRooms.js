@@ -11,7 +11,7 @@ searchField.addEventListener("keyup",(e) => {
                 console.log("hej");
             }
         };
-        xhttp.open("POST", "/search_rooms", true);
+        xhttp.open("POST", "/search-rooms", true);
         xhttp.send();
         /*fetch("/search-rooms",{
             body: JSON.stringify({searchText: searchValue}),
