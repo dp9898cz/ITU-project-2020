@@ -53,7 +53,7 @@ def search_rooms():
             response.headers["Content-Type"] = "application/json"
             return response
         else:
-            response = make_response(jsonify({"message": "notfound"}),200,)
+            response = make_response(jsonify({"message": search_str,"string":"notfound"}),200,)
             response.headers["Content-Type"] = "application/json"
             return response
     response = make_response(jsonify({"message": "notfound"}),200,)
