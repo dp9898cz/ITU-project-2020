@@ -50,8 +50,8 @@ def search_rooms():
         if Room.query.filter_by(number=search_str):
             return "found"
         else:
-            return "notfound"
-    return "notfound"    
+            return ("notfound", 200) 
+    return ("notfound", 200) 
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
 def zadat_uklizeci():
