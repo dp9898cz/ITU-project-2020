@@ -11,7 +11,7 @@
                 <input type="number" name="number" id="searchField"  onkeyup="kontrola_pokoje(this.value)">
                 <span id="error" style="color:red;font-size:15px;display:none">Tento pokoj neexistuje</span>
             </div>
-            <script src="js/searchRooms.js"></script>
+            <script src="{{ url_for('static', filename='js/searchRooms.js') }}"></script>
            <!--<script>
                 function kontrola_pokoje(str) {
                     var rooms = {{rooms | safe}};
