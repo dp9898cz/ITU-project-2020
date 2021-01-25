@@ -12,8 +12,7 @@ searchField.addEventListener("keyup",(e) => {
             data: JSON.stringify({searchValue}),
             dataType: "json",
             success: function (responce) {
-                var parsed_data = JSON.parse(responce);
-                console.log(parsed_data);   
+                console.log(responce);   
             },
         });
     
