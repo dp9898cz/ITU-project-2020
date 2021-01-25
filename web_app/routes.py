@@ -44,10 +44,16 @@ def main():
 def search_rooms():
     if request.method == 'POST':
         search_str = request.args.get('searchValue')
-        
         if search_str == "":
-            return "empty"
-        if Room.query.filter_by(number=search_str):
+            response = make_response(
+                jsonify(
+                    {"message": "empty"}
+                ),
+                200,
+            )
+            response.headers["Content-Type"] = "application/json"
+            return response
+        if (Room.query.filter_by(number=search_str)!= ""):
             response = make_response(
                 jsonify(
                     {"message": "found"}
@@ -65,7 +71,14 @@ def search_rooms():
             )
             response.headers["Content-Type"] = "application/json"
             return response
-    return "notfound" 
+    response = make_response(
+        jsonify(
+            {"message": "notfound"}
+        ),
+        200,
+        )
+    response.headers["Content-Type"] = "application/json"
+    return response
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
 def zadat_uklizeci():
