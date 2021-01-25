@@ -57,7 +57,7 @@ def ahoj():
     print("hello")
     return
 
-@routes.route('/zadat_uklizeci', methods=['GET', 'POST'])
+@routes.route('/zadat_uklizeci', methods=['POST','GET'])
 def zadat_uklizeci():
     if request.method == 'POST':
         if request.form.get('login') and request.form.get('password'):
