@@ -9,9 +9,10 @@
             
             <div class="grid" >
                 <input type="number" name="number" id="searchField" >
+                <script src="{{ url_for('static', filename='js/searchRooms.js') }}"></script>
                 <span id="error" style="color:red;font-size:15px;display:none">Tento pokoj neexistuje</span>
             </div>
-            <script src="{{ url_for('static', filename='js/searchRooms.js') }}"></script>
+            
            <!--<script>
                 function kontrola_pokoje(str) {
                     var rooms = {{rooms | safe}};
