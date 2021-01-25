@@ -52,7 +52,6 @@ def search_rooms():
                 ),
                 200,
             )
-            response.headers["Content-Type"] = "application/json"
             return response
         if Room.query.filter_by(number=search_str).first():
             response = make_response(
@@ -61,7 +60,6 @@ def search_rooms():
                 ),
                 200,
             )
-            response.headers["Content-Type"] = "application/json"
             return response
         else:
             response = make_response(
@@ -78,7 +76,6 @@ def search_rooms():
         ),
         200,
     )
-    response.headers["Content-Type"] = "application/json"
     return response
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
