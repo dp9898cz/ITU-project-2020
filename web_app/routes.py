@@ -3,6 +3,7 @@ from flask import render_template, Blueprint, redirect, url_for, request, flash
 from web_app.models import *
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user, current_user, login_required
+import django
 from django.http import JsonResponse
 import datetime
 import json
