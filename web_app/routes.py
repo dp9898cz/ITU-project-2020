@@ -8,7 +8,7 @@ import json
 
 routes = Blueprint('routes', __name__)
 
-
+@routes.route('/search-rooms', methods=['POST'])
 def search_rooms(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
