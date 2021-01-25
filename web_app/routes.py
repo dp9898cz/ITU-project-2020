@@ -45,38 +45,18 @@ def search_rooms():
     if request.method == 'POST':
         search_str = request.args.get('searchValue')
         if search_str == "":
-            response = make_response(
-                jsonify(
-                    {"message": "empty"}
-                ),
-                200,
-            )
+            response = make_response(jsonify({"message": "empty"}),200,)
             response.headers["Content-Type"] = "application/json"
             return response
-        if (Room.query.filter_by(number=search_str)!= ""):
-            response = make_response(
-                jsonify(
-                    {"message": "found"}
-                ),
-                200,
-            )
+        if Room.query.filter_by(number=search_str).first():
+            response = make_response(jsonify({"message": "found"}),200,)
             response.headers["Content-Type"] = "application/json"
             return response
         else:
-            response = make_response(
-                jsonify(
-                    {"message": "notfound"}
-                ),
-                200,
-            )
+            response = make_response(jsonify({"message": "notfound"}),200,)
             response.headers["Content-Type"] = "application/json"
             return response
-    response = make_response(
-        jsonify(
-            {"message": "notfound"}
-        ),
-        200,
-        )
+    response = make_response(jsonify({"message": "notfound"}),200,)
     response.headers["Content-Type"] = "application/json"
     return response
 
