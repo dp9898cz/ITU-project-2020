@@ -44,11 +44,11 @@ def search_rooms():
     if request.method == 'POST':
         search_str = request.args.get('searchValue')
         if search_str == "":
-            return 2
+            return "empty"
         if Room.query.filter_by(number=search_str):
-            return 1
+            return "found"
         else:
-            return 0
+            return "notfound"
     return 2       
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
