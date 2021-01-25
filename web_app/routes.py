@@ -50,7 +50,7 @@ def search_rooms():
             return 1
         else:
             return 0
-            
+    return 2       
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
 def zadat_uklizeci():

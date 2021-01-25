@@ -7,12 +7,12 @@ searchField.addEventListener("keyup",(e) => {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(this.response.JSON);
                 console.log("hej");
             }
         };
-        xhttp.open("GET", "/search-rooms", true);
+        xhttp.open("POST", "/search-rooms", true);
         xhttp.send();
+        
         /*fetch("/search-rooms",{
             body: JSON.stringify({searchText: searchValue}),
             method: "POST",
