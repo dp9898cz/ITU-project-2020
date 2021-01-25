@@ -10,7 +10,11 @@ searchField.addEventListener("keyup",(e) => {
             url: "/search-rooms",
             traditional: "true",
             data: JSON.stringify({searchValue}),
-            dataType: "json"
+            dataType: "json",
+            success: function (data) {
+                var parsed_data = JSON.parse(data);
+                console.log(parsed_data);   
+            },
         });
     
         /*var xhttp = new XMLHttpRequest();
