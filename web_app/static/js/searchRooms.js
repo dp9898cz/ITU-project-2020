@@ -18,7 +18,7 @@ searchField.addEventListener("keyup",(e) => {
             method: "POST",
 
         })
-            .then((x)=>{console.log(x);
+            .then((res)=>{console.log(res);
         });
     }
 });

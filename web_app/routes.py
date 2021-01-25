@@ -3,6 +3,7 @@ from flask import render_template, Blueprint, redirect, url_for, request, flash
 from web_app.models import *
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user, current_user, login_required
+from django.http import JsonResponse
 import datetime
 import json
 
@@ -43,13 +44,14 @@ def main():
 def search_rooms():
     if request.method == 'POST':
         search_str = request.args.get('searchValue')
+        
         if search_str == "":
-            return "empty"
+            return JsonResponse("empty",safe=False)
         if Room.query.filter_by(number=search_str):
-            return "found"
+            return JsonResponse("found",safe=False)
         else:
-            return "notfound"
-    return 2       
+            return JsonResponse("notfound",safe=False)
+    return JsonResponse("notfound",safe=False)      
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
 def zadat_uklizeci():
