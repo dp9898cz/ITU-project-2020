@@ -43,7 +43,7 @@ def main():
 @routes.route('/search-rooms', methods=['POST', 'GET'])
 def search_rooms():
     if request.method == 'POST':
-        search_str = request.args.get('searchValue')
+        search_str = request.get_json()
         if search_str == "":
             response = make_response(jsonify({"message": "empty"}),200,)
             response.headers["Content-Type"] = "application/json"
