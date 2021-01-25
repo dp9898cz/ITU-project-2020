@@ -42,7 +42,6 @@ def main():
 @routes.route('/search-rooms', methods=['POST', 'GET'])
 def search_rooms():
     print("hello")
-    """
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
         if search_str == "":
@@ -50,12 +49,8 @@ def search_rooms():
         if Room.query.filter_by(number=search_str):
             return 1
         else:
-            return 0"""
+            return 0
             
-@routes.route('/ahoj', methods=['POST', 'GET'])
-def ahoj():
-    print("hello")
-    return
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
 def zadat_uklizeci():
