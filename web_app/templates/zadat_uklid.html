@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+{% extends 'base.html' %}  {% load static %} {% block head %} {% endblock %} {% block body %}
 <div class="content">
     <h1>Zadat úklid</h1>
     <form method="POST" action="{{ url_for('routes.zadat_uklid') }}">
@@ -8,9 +8,10 @@
             </div>
             
             <div class="grid" >
-                <input type="number" name="number" id="pokoj-check"  onkeyup="kontrola_pokoje(this.value)">
+                <input type="number" name="number" id="searchField"  onkeyup="kontrola_pokoje(this.value)">
                 <span id="error" style="color:red;font-size:15px;display:none">Tento pokoj neexistuje</span>
             </div>
+            <script src="{% static 'js/searchRooms.js' %}"></script>
             <script>
                 function kontrola_pokoje(str) {
                     var rooms = {{rooms | safe}};
