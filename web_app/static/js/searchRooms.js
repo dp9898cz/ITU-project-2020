@@ -12,15 +12,15 @@ searchField.addEventListener("keyup",(e) => {
             data: JSON.stringify({searchValue}),
             dataType: "json",
             success: function (responce) {
-                console.log(responce);   
-                if (responce == "found") {
+                console.log(responce[message]);   
+                if (responce[message] == "found") {
                     document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,255, 0), 0 0px 6px 0 rgb( 0,255, 0)";
                     document.getElementById("error").style.display="none";
-                }else if(responce == "notfound"){
+                }else if(responce[message] == "notfound"){
                     document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb(255, 0, 0), 0 0px 6px 0 rgb(255, 0, 0)";
                     document.getElementById("error").style.display="block";
                     } 
-                if(responce == "empty"){
+                if(responce[message] == "empty"){
                     document.getElementById("pokoj-check").style.boxShadow = "0 0px 0px 0 rgb( 0,0, 0), 0 0px 0px 0 rgb( 0,0, 0)";
                     document.getElementById("error").style.display="none";
                 }
