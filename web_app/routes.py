@@ -1,6 +1,5 @@
 from flask import render_template, Blueprint, redirect, url_for, request, flash
-from django.urls import path
-from django.views.decorators.csrf import csrf_exempt
+
 from web_app.models import *
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user, current_user, login_required
@@ -9,8 +8,7 @@ import json
 
 routes = Blueprint('routes', __name__)
 
-path('/search-rooms',csrf_exempt(routes.search_rooms), name="search_rooms")
-  
+@routes.route('zadat_uklid/search-rooms', methods=['POST'])
 def search_rooms(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
@@ -20,7 +18,7 @@ def search_rooms(request):
             return 1
         else:
             return 0
-      
+        
 @routes.route('/',  methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
@@ -198,7 +196,6 @@ def zadat_uklid():
         return redirect(url_for('routes.zadat_uklid'))
     else:
         return render_template('zadat_uklid.html', **context)
-    
 
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
