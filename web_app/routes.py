@@ -7,8 +7,7 @@ import datetime
 import json
 
 routes = Blueprint('routes', __name__)
-
-@routes.route('zadat_uklid/search-rooms', methods=['POST'])
+ 
 def search_rooms(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
@@ -18,7 +17,7 @@ def search_rooms(request):
             return 1
         else:
             return 0
-        
+      
 @routes.route('/',  methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
@@ -196,6 +195,7 @@ def zadat_uklid():
         return redirect(url_for('routes.zadat_uklid'))
     else:
         return render_template('zadat_uklid.html', **context)
+    
 
 @routes.route('/uklidy', methods=['GET'])
 def uklidy():
