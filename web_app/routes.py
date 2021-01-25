@@ -56,7 +56,6 @@ def search_rooms():
             )
             response.headers["Content-Type"] = "application/json"
             return response
-            return "found"
         else:
             response = make_response(
                 jsonify(
