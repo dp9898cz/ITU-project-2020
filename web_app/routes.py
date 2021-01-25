@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, redirect, url_for, request, flash
+from flask import render_template, Blueprint, redirect,jsonify, make_response, url_for, request, flash
 
 from web_app.models import *
 from werkzeug.security import check_password_hash
@@ -48,9 +48,24 @@ def search_rooms():
         if search_str == "":
             return "empty"
         if Room.query.filter_by(number=search_str):
+            response = make_response(
+                jsonify(
+                    {"message": "found"}
+                ),
+                200,
+            )
+            response.headers["Content-Type"] = "application/json"
+            return response
             return "found"
         else:
-            return "notfound"
+            response = make_response(
+                jsonify(
+                    {"message": "notfound"}
+                ),
+                200,
+            )
+            response.headers["Content-Type"] = "application/json"
+            return response
     return "notfound" 
 
 @routes.route('/zadat_uklizeci', methods=['POST','GET'])
