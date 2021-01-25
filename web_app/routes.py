@@ -187,7 +187,7 @@ def zadat_uklid():
     else:
         return render_template('zadat_uklid.html', **context)
     
-@routes.route('zadat_uklid/search-rooms', methods=['POST'])
+
 def search_rooms(request):
     if request.method == 'POST':
         search_str = json.loads(request.body).get('searchText')
