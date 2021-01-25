@@ -18,8 +18,10 @@ searchField.addEventListener("keyup",(e) => {
             method: "POST",
 
         })
-            .then((text)=>text.json())
-            .then((text)=>{console.log(text);
+            .then((res)=>{
+                console.log(res);
+                const text=res.headers.values()
+                console.log(text);
         });
     }
 });
