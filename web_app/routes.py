@@ -44,7 +44,7 @@ def main():
 def search_rooms():
     if request.method == 'POST':
         search_str2 = request.get_json()
-        search_str = search_str2.searchValue
+        search_str = search_str2["searchValue"]
         if search_str == "":
             response = make_response(jsonify({"message": "empty"}),200,)
             response.headers["Content-Type"] = "application/json"
