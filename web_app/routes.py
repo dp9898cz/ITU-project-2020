@@ -51,9 +51,11 @@ def search_rooms():
             return 1
         else:
             return 0"""
+            
 @routes.route('/ahoj', methods=['POST', 'GET'])
 def ahoj():
     print("hello")
+    return
 
 @routes.route('/zadat_uklizeci', methods=['GET', 'POST'])
 def zadat_uklizeci():
