@@ -38,10 +38,6 @@ def logout():
 def main():
     return render_template('main.html')
 
-@app.route('/room_check')
-def room_check():
-    print ("Hello")
-    return ("nothing")
 
 @routes.route('/search_rooms',  methods=['POST', 'GET'])
 def search_rooms(request):

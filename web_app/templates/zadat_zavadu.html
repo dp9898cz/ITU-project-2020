@@ -7,23 +7,10 @@
                 <h2>Pokoj:</h2>
             </div>
             <div class="grid" >
-                <input type="number" name="number" id="test">
-                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                <script type=text/javascript>
-                        $(function() {
-                        $('a#test').on('keyup', function(e) {
-                            e.preventDefault()
-                            $.getJSON('/room_check',
-                                function(data) {
-                            //do nothing
-                            });
-                            return false;
-                        });
-                        });
-                </script>
+                <input type="number" name="number" id="pokoj-check"  onkeyup="kontrola_pokoje(this.value)">
                 <span id="error" style="color:red;font-size:15px;display:none">Tento pokoj neexistuje</span>
             </div>
-            <!--<script>
+            <script>
                 function kontrola_pokoje(str) {
                     var rooms = {{rooms | safe}};
                     var nalezen = 0;
@@ -45,7 +32,7 @@
                     }
                     }
                 
-            </script>-->
+            </script>
             <div class="grid">
                 <h2>Datum:</h2>
             </div>
