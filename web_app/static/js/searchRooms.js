@@ -20,7 +20,7 @@ searchField.addEventListener("keyup",(e) => {
         })
             .then((res)=>{
                 console.log(res);
-                const text2=res.body;
+                const text2=res.message;
                 console.log(text2);
         });
     }
