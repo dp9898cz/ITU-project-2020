@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, redirect, url_for, request, flash
+from flask import render_template, Blueprint, redirect, url_for, request, flash, jsonify
 
 from web_app.models import *
 from werkzeug.security import check_password_hash
@@ -193,3 +193,37 @@ def uklidy():
     }
     return render_template('uklidy.html', **context)
 
+
+@routes.route('/user_check', methods=['POST'])
+def username_check():
+    if request.form.get('login'):
+        if User.query.filter_by(login = request.form.get('login')).first():
+            resp = jsonify('<span style=color:red;>Login je jiz pouzivan.</span>')
+            resp.status_code = 200
+            return resp
+        else:
+            resp = jsonify('<span style=color:green;>Login je k dispozici.</span>')
+            resp.status_code = 200
+            return resp
+    else:
+        resp = jsonify('<span style=color:red;>Je nutne zvolit login.</span>')
+        resp.status_code = 200
+        return resp
+
+@routes.route("/ajax", methods=["POST","GET"])
+def ajax():
+    if request.form.get('id'):
+        user = User.query.filter_by(id = int(request.form.get('id'))).first()
+        if request.form.get('login'):  
+            user.login = request.form.get('login')
+        elif request.form.get('name'):
+            user.name = request.form.get('name')
+        elif request.form.get('surname'):
+            user.surname = request.form.get('surname')
+        elif request.form.get('admin'):
+            value = (request.form.get('admin') == "true")
+            user.isAdmin = value
+    db.session.commit()
+    resp = jsonify("success")
+    resp.status_code = 200
+    return resp

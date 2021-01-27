@@ -8,6 +8,7 @@ from web_app.models import User
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile("settings.py")
+    app.secret_key = 'super secret key'
 
     app.register_blueprint(routes)
 

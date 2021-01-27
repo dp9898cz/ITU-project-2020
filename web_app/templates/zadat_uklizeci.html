@@ -21,6 +21,9 @@
             <div class="grid">
                 <input type="text" name="login" id="login">
             </div>
+            <div id="msg">
+
+            </div>
             <div class="grid">
                 <h2>Heslo:</h2>
             </div>
@@ -46,4 +49,34 @@
     </form>
 </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#login").on('input', function(e) {
+        $('#msg').hide();
+        if ($('#login').val() == null || $('#login').val() == "") {
+            $('#msg').show();
+            $("#msg").html("Je nutne zadat login.").css("color", "red");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "/user_check",
+                data: $('#login').serialize(),
+                dataType: "html",
+                cache: false,
+                success: function(msg) {
+                    $('#msg').show();
+                    $('#loading').hide();
+                    $("#msg").html(msg);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $('#msg').show();
+                    $('#loading').hide();
+                    $("#msg").html(textStatus + " " + errorThrown);
+                }
+            });
+        }
+   });
+});
+</script>
 {% endblock %}

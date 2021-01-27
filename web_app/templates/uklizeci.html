@@ -10,12 +10,102 @@
         </tr>
         {% for u in users %}
             <tr>
-                <td>{{ u.login }}</td>
-                <td>{{ u.name }}</td>
-                <td>{{ u.surname }}</td>
-                <td><input type="checkbox" {% if u.isAdmin %}checked{% endif %}></td>
+                <td name="{{ u.id }}" class="edit_td">
+                    <span class="text">{{u.login}}</span>
+                    <input type="text" name="login" value="{{u.login}}" class="editbox" />
+                </td>
+                <td name="{{ u.id }}" class="edit_td">
+                    <span class="text">{{u.name}}</span>
+                    <input type="text" name="name" value="{{u.name}}" class="editbox" />
+                </td>
+                <td name="{{ u.id }}" class="edit_td">
+                    <span class="text">{{u.surname}}</span>
+                    <input type="text" name="surname" value="{{u.surname}}" class="editbox" />
+                </td>
+                <td><input name="{{ u.id }}" type="checkbox" {% if u.isAdmin %}checked{% endif %} onchange="chkbxChange(this)"></td>
             </tr>
         {% endfor %}
     </table>
 </div>
+<style>
+    .editbox
+{
+display:none
+}
+.editbox
+{
+font-size:16px;
+width:270px;
+background-color:#ffffcc;
+border:solid 1px #000;
+padding:4px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    function chkbxChange(element) {
+        ID = element.name;
+        if (element.checked) {
+            value = true;
+            var dataString = '&id=' + ID + '&admin=' + value;
+        }
+        else {
+            value = false;
+            var dataString = '&id=' + ID + '&admin=' + value;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/ajax",
+            data: dataString,
+            cache: false,
+            success: function(h) {
+                element.checked = value;
+            }
+        });
+      };
+      
+    $(document).ready(function() {
+        $(".edit_td").click(function() {
+            $(this).find("input").show();
+            $(this).find("span").hide();
+      }).change(function(){
+          var ID = $(this).attr('name');
+          var value = $(this).find("input").val();
+          var _span = $(this).find("span");
+          if ($(this).find("input").attr('name') == "login") {
+              var dataString = '&id=' + ID + '&login=' + value;
+          }
+          else if ($(this).find("input").attr('name') == "name") {
+                console.log("name");
+                var dataString = '&id=' + ID + '&name=' + value;
+          }
+          else if ($(this).find("input").attr('name') == "surname") {
+                console.log("surname");
+                var dataString = '&id=' + ID + '&surname=' + value;
+          }
+          
+          if(value.length > 0){
+            $.ajax({
+              type: "POST",
+              url: "/ajax",
+              data: dataString,
+              cache: false,
+              success: function(html) {
+                _span.html(value);
+              }
+            });
+          }else{
+            alert('Enter something.');
+          }
+      });
+        
+      $(".editbox").mouseup(function() {
+       return false
+      });
+      $(document).mouseup(function() {
+          $(".editbox").hide();
+          $(".text").show();
+      });
+    });
+</script>
 {% endblock %}
