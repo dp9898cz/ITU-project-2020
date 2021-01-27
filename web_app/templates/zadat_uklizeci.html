@@ -1,13 +1,4 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#login").on('input', function(e){
-            $('#msg').hide();
-            $('#loading').show();
-        });
-    });
-    </script>
 <div class="content">
     <h1>Přidat uživatele</h1>
     <form method="POST" action="{{ url_for('routes.zadat_uklizeci') }}">
@@ -30,8 +21,16 @@
             <div class="grid">
                 <input type="text" class="form-control" placeholder="Zadejte login" name="login" id="login">
                 <div id="msg"></div>
-                <h4 id='loading' style="display:none;">
+                <h4 id='loading' style="display:none;">Loading...</h4>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#login").on('input', function(e) {
+                        $('#msg').hide();
+                        $('#loading').show();
+                    });
+                });
+            </script>
             <div class="grid">
                 <h2>Heslo:</h2>
             </div>
